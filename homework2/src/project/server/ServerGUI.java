@@ -14,11 +14,11 @@ public class ServerGUI extends JFrame {
 
     JButton btnStart, btnStop;
     JTextArea log;
-    
+
     Server server;
 
     public ServerGUI(Server server){
-        this.server =server;
+        this.server = server;
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(WIDTH, HEIGHT);
         setResizable(false);
@@ -35,7 +35,7 @@ public class ServerGUI extends JFrame {
         add(log);
         add(createButtons(), BorderLayout.SOUTH);
     }
-    private void appendLog(String text){
+    public void appendLog(String text){
         log.append(text + "\n");
     }
     private Component createButtons() {

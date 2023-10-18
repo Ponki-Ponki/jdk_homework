@@ -44,7 +44,7 @@ public class Server implements ServerView{
         if (!work){
             return;
         }
-        //appendLog(text);
+        window.appendLog(text);
         answerAll(text);
         saveInLog(text);
     }
