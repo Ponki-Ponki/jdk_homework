@@ -1,6 +1,6 @@
 package project.server.repository;
 
 public interface Repository {
-    public void read();
-    public void save();
+    public String readLog();
+    public void saveLog(String text);
 }
