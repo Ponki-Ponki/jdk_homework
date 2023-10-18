@@ -1,4 +1,4 @@
-package server.client;
+package project.client;
 
 public interface ClientView {
     void showMessage(String text);

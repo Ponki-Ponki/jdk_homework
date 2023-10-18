@@ -1,6 +1,7 @@
-package server.client;
+package project.client;
 
-import server.server.ServerWindow;
+import project.server.Server;
+import project.server.ServerGUI;
 
 import javax.swing.*;
 import java.awt.*;
@@ -18,13 +19,13 @@ public class ClientGUI extends JFrame implements ClientView{
 
     private Client client;
 
-    public ClientGUI(ServerWindow server){
+    public ClientGUI(Server server){
         this.client = new Client(this, server);
 
         setSize(WIDTH, HEIGHT);
         setResizable(false);
         setTitle("Chat client");
-        setLocation(server.getX() - 500, server.getY());
+        setLocation(server.getWindow().getX() - 500, server.getWindow().getY());
 
         createPanel();
 
