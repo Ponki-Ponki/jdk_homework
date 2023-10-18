@@ -9,9 +9,9 @@ public class Client {
     private Server server;
     private boolean connected;
 
-    public Client(ClientView clientView, Server serverWindow) {
+    public Client(ClientView clientView, Server server) {
         this.clientView = clientView;
-        this.server = serverWindow;
+        this.server = server;
     }
 
     public boolean connectToServer(String name){

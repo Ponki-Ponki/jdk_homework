@@ -4,8 +4,6 @@ import project.client.Client;
 import project.server.repository.Repository;
 import project.server.repository.Storage;
 
-import java.io.FileReader;
-import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,11 +26,13 @@ public class Server implements ServerView{
             return false;
         }
         clientList.add(client);
+        window.appendLog("Пользователь " +client.getName()+ " подключён!");
         return true;
     }
     public void disconnectUser(Client client){
-        clientList.remove(client);
-        if (client != null){
+        if (client != null && clientList.contains(client)){
+            window.appendLog("Пользователь " +client.getName()+ " отключён!");
+            clientList.remove(client);
             client.disconnect();
         }
     }
