@@ -3,23 +3,24 @@ package project.server.repository;
 import java.io.FileReader;
 import java.io.FileWriter;
 
-public class Storage implements Repository{
+public class Storage implements Repository<String> {
 
     public static final String LOG_PATH = "src/project/server/log.txt";
-    public Storage(){
+
+    public Storage() {
     }
 
     @Override
     public String readLog() {
         StringBuilder stringBuilder = new StringBuilder();
-        try (FileReader reader = new FileReader(LOG_PATH)){
+        try (FileReader reader = new FileReader(LOG_PATH)) {
             int c;
-            while ((c = reader.read()) != -1){
+            while ((c = reader.read()) != -1) {
                 stringBuilder.append((char) c);
             }
-            stringBuilder.delete(stringBuilder.length()-1, stringBuilder.length());
+            stringBuilder.delete(stringBuilder.length() - 1, stringBuilder.length());
             return stringBuilder.toString();
-        } catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
             return null;
         }
@@ -27,10 +28,10 @@ public class Storage implements Repository{
 
     @Override
     public void saveLog(String text) {
-        try (FileWriter writer = new FileWriter(LOG_PATH, true)){
+        try (FileWriter writer = new FileWriter(LOG_PATH, true)) {
             writer.write(text);
             writer.write("\n");
-        } catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
