@@ -24,9 +24,25 @@ public class Main {
         a.print(a.divide(a1,a2));
         a.print(a.subtract(a1,a2));
         a.print(a.multiply(a1,a2));
+
+
+
+        Integer[] array1 = {1, 2, 3, 4, 5};
+        Double[] array3 = {1.0, 2.0, 3.0, 4.0, 5.0};
+        Integer[] array4 = {1, 2, 3, 4, 5};
+        Integer[] array2 = {6, 7, 8, 9, 10};
+
+        System.out.println(compareArrays(array1,array2));
+        System.out.println(compareArrays(array1,array3));
+        System.out.println(compareArrays(array1,array4));
     }
 
-    public void compareArrays(){
-
+    public static <T> Boolean compareArrays(T[] arr1, T[] arr2){
+        if(!arr1.getClass().getName().equals(arr2.getClass().getName())) return false;
+        if (arr1.length != arr2.length) return false;
+        for (int i = 0; i < arr1.length; i++) {
+            if(arr1[i]!=arr2[i]) return false;
+        }
+        return true;
     }
 }
