@@ -18,7 +18,12 @@ import home.calc.Calc;
 public class Main {
     public static void main(String[] args) {
         Calc a = new Calc();
-        a.sum(3,4);
+        Integer a1 = 3;
+        Double a2 = 4.5;
+        a.print(a.sum(a1,a2));
+        a.print(a.divide(a1,a2));
+        a.print(a.subtract(a1,a2));
+        a.print(a.multiply(a1,a2));
     }
 
     public void compareArrays(){
