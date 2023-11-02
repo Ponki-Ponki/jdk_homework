@@ -28,17 +28,20 @@ public class ListCollaborator {
         return  answer;
     }
 
-    public String  getPhoneNumber(String name){
-        String phone = "None";
+    public List<Collaborator> getPhoneNumber(String name){
+        List<Collaborator> answer = new ArrayList<>();
         for (Collaborator item : list) {
-            if (item.getName().equals(name)) phone = item.getPhone();
+            if (item.getName().equals(name))  answer.add(item);
         }
-        return phone;
+        return answer;
     }
 
     public void printNumberPhoneByName(String name){
         System.out.println("I found it: ");
-        System.out.println(getPhoneNumber(name));
+        List<Collaborator> answer = getPhoneNumber(name);
+        if (!answer.isEmpty()){
+            printList(getPhoneNumber(name));
+        }else System.out.println("None");
     }
 
     public Collaborator foundCollaboratorTabNumber(Integer tabNumber) {

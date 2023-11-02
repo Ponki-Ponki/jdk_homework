@@ -8,6 +8,7 @@ public class Main {
         Collaborator collaborator4 = new Collaborator(4, "89994567890", "Sophia", 2);
         Collaborator collaborator5 = new Collaborator(5, "89995678901", "Daniel", 6);
         Collaborator collaborator6 = new Collaborator(6, "89996789012", "Olivia", 4);
+        Collaborator collaborator11 = new Collaborator(11, "89996000012", "Olivia", 3);
         Collaborator collaborator7 = new Collaborator(7, "89997890123", "William", 9);
         Collaborator collaborator8 = new Collaborator(8, "89998901234", "Emma", 7);
         Collaborator collaborator9 = new Collaborator(9, "89999012345", "James", 1);
@@ -24,15 +25,18 @@ public class Main {
         list.addCollaborator(collaborator8);
         list.addCollaborator(collaborator9);
         list.addCollaborator(collaborator10);
+        list.addCollaborator(collaborator11);
         list.newCollaborator();
         list.printList();
 
-
+        //Поиск по стажу
         System.out.println();
         list.printList(list.foundCollaboratorAgeWork(10));
+        //Поиск по номеру телефона
         System.out.println();
-        list.printNumberPhoneByName("Ivan");
+        list.printNumberPhoneByName("Olivia");
         list.printNumberPhoneByName("Ivanф");
+        //Поиск по таб номеру
         try{
             System.out.println();
             list.foundCollaboratorTabNumber(1).print();
