@@ -34,4 +34,8 @@ public class Collaborator {
     public Integer getAgeWork() {
         return ageWork;
     }
+
+    public void print(){
+        System.out.printf("%d: %s  Номер телефона: %s  Стаж: %d \n",tabNumber,name,phone,ageWork);
+    }
 }
