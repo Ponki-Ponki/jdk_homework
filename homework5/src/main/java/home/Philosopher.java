@@ -34,15 +34,12 @@ public class Philosopher extends Thread{
     public void run() {
         try
         {
-            while(num<3)// пока количество приемов пищи не достигнет 3
+            while(num<3)
             {
-                //Запрашиваем у семафора разрешение на выполнение
                 sem.acquire();
                 System.out.println ("Философ " + id+" ест");
-                // философ ест
                 sleep(500);
                 num++;
-
                 System.out.println ("Философ " + id+" думает");
                 sem.release();
                 sleep(500);
